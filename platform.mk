@@ -117,6 +117,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/vendor/etc/rqbalance_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/rqbalance_config.xml
 
+# CAMX config
+PRODUCT_COPY_FILES += \
+    $(SONY_ROOT)/vendor/etc/camera/camxoverridesettings.txt:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camxoverridesettings.txt
+
 # Platform specific init
 PRODUCT_PACKAGES += \
     init.tama \
@@ -185,3 +189,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 $(call inherit-product, device/sony/common/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
